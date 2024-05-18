@@ -1,6 +1,7 @@
 import re
 import csv
 import argparse
+import sys
 
 class Threat:
     def __init__(self, summary="", threat_number=0, priority="", category="", description="", sdl_phase="", mitigations=""):
@@ -86,14 +87,15 @@ def main():
 
     args = parser.parse_args()
 
-    INPUT_FILE =args.input_file
+    INPUT_FILE = args.input_file
     DIRECTORY = args.output_path
-    if args.output_path == "":
-        DIRECTORY="."
-    if args.input_file == "":
-        print("Error: no input file")
-        exit
 
+    if args.output_path == None:
+        DIRECTORY="."
+    if args.input_file == None:
+        print("Error: no input file")
+        sys.exit()
+    
 
     with open(INPUT_FILE, 'r') as file:
         lines = file.readlines()
