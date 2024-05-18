@@ -1,0 +1,753 @@
+Interaction: Catalog to Gateway
+1. An adversary can deny actions on Cloud Gateway due to lack of auditing  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	An adversary may perform actions such as spoofing attempts, unauthorized access etc. on Cloud gateway. It is important to monitor these attempts so that adversary cannot deny these actions
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that appropriate auditing and logging is enforced on Cloud Gateway. Refer: <a href="https://aka.ms/tmtauditlog#logging-cloud-gateway">https://aka.ms/tmtauditlog#logging-cloud-gateway</a>
+SDL Phase:	Design
+Interaction: DB to Catalog
+2. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+3. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+4. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+5. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+6. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+7. An adversary may spoof Generic Data Store and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+8. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+9. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+Interaction: DB to Delivery
+10. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+11. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+12. An adversary may spoof Generic Data Store and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+13. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+14. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+15. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+16. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+17. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: DB to Login
+18. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+19. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+20. An adversary may spoof Generic Data Store and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+21. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+22. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+23. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+24. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+25. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: DB to Order
+26. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+27. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+28. An adversary may spoof Generic Data Store and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+29. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+30. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+31. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+32. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+33. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: DB to Payment
+34. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+35. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+36. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+37. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+38. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+39. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+40. An adversary may spoof Generic Data Store and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+41. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+Interaction: Delivery to Gateway
+42. An adversary can deny actions on Cloud Gateway due to lack of auditing  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	An adversary may perform actions such as spoofing attempts, unauthorized access etc. on Cloud gateway. It is important to monitor these attempts so that adversary cannot deny these actions
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that appropriate auditing and logging is enforced on Cloud Gateway. Refer: <a href="https://aka.ms/tmtauditlog#logging-cloud-gateway">https://aka.ms/tmtauditlog#logging-cloud-gateway</a>
+SDL Phase:	Design
+Interaction: Gateway to Catalog
+43. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+44. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+45. An adversary may spoof API Gateway and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+46. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+47. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+48. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+49. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+50. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Gateway to Delivery
+51. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+52. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+53. An adversary may spoof API Gateway and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+54. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+55. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+56. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+57. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+58. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Gateway to Login
+59. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+60. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+61. An adversary may spoof API Gateway and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+62. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+63. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+64. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+65. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+66. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Gateway to Order
+67. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+68. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+69. An adversary may spoof API Gateway and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+70. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+71. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+72. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+73. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+74. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Login to Gateway
+75. An adversary can deny actions on Cloud Gateway due to lack of auditing  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	An adversary may perform actions such as spoofing attempts, unauthorized access etc. on Cloud gateway. It is important to monitor these attempts so that adversary cannot deny these actions
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that appropriate auditing and logging is enforced on Cloud Gateway. Refer: <a href="https://aka.ms/tmtauditlog#logging-cloud-gateway">https://aka.ms/tmtauditlog#logging-cloud-gateway</a>
+SDL Phase:	Design
+Interaction: MQ to Delivery
+76. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+77. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+78. An adversary may spoof Message Queue and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+79. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+80. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+81. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+82. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+83. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: MQ to E-mail
+84. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+85. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+86. An adversary may spoof Message Queue and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+87. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+88. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+89. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+90. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+91. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: MQ to SMS
+92. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+93. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+94. An adversary may spoof Message Queue and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+95. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+96. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+97. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+98. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+99. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Order to Gateway
+100. An adversary can deny actions on Cloud Gateway due to lack of auditing  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	An adversary may perform actions such as spoofing attempts, unauthorized access etc. on Cloud gateway. It is important to monitor these attempts so that adversary cannot deny these actions
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that appropriate auditing and logging is enforced on Cloud Gateway. Refer: <a href="https://aka.ms/tmtauditlog#logging-cloud-gateway">https://aka.ms/tmtauditlog#logging-cloud-gateway</a>
+SDL Phase:	Design
+Interaction: Order to Payment
+101. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+102. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+103. An adversary may spoof Order Service and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+104. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+105. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+106. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+107. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+108. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Payment to Order
+109. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
+SDL Phase:	Implementation
+110. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary may inject malicious inputs into an API and affect downstream processes
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
+SDL Phase:	Implementation
+111. An adversary may spoof Payment Service and gain access to Web API  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
+SDL Phase:	Design
+112. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	Attacker can deny a malicious act on an API leading to repudiation issues
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
+SDL Phase:	Design
+113. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
+SDL Phase:	Implementation
+114. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
+SDL Phase:	Implementation
+115. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
+SDL Phase:	Implementation
+116. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
+SDL Phase:	Implementation
+Interaction: Request
+117. An adversary can reverse engineer and tamper binaries  [State: Not Started]  [Priority: High] 
+Category:	Tampering
+Description:	An adversary can use various tools, reverse engineer binaries and abuse them by tampering
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Obfuscate generated binaries before distributing to end users. Refer: <a href="https://aka.ms/tmtdata#binaries-end">https://aka.ms/tmtdata#binaries-end</a>
+SDL Phase:	Design
+118. An adversary can gain sensitive data from mobile device  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	If application saves sensitive PII or HBI data on phone SD card or local storage, then it ay get stolen.
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Encrypt sensitive or PII data written to phones local storage. Refer: <a href="https://aka.ms/tmtdata#pii-phones">https://aka.ms/tmtdata#pii-phones</a>
+SDL Phase:	Implementation
+119. An adversary can gain access to sensitive data by sniffing traffic from Mobile client  [State: Not Started]  [Priority: High] 
+Category:	Information Disclosure
+Description:	An adversary can gain access to sensitive data by sniffing traffic from Mobile client
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement Certificate Pinning. Refer: <a href="https://aka.ms/tmtcommsec#cert-pinning">https://aka.ms/tmtcommsec#cert-pinning</a>
+SDL Phase:	Implementation
+120. An adversary may jail break into a mobile device and gain elevated privileges  [State: Not Started]  [Priority: High] 
+Category:	Elevation of Privileges
+Description:	An adversary may jail break into a mobile device and gain elevated privileges
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Implement implicit jailbreak or rooting detection. Refer: <a href="https://aka.ms/tmtauthz#rooting-detection">https://aka.ms/tmtauthz#rooting-detection</a>
+SDL Phase:	Design
+Interaction: Request
+121. An adversary can deny actions on Cloud Gateway due to lack of auditing  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	An adversary may perform actions such as spoofing attempts, unauthorized access etc. on Cloud gateway. It is important to monitor these attempts so that adversary cannot deny these actions
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that appropriate auditing and logging is enforced on Cloud Gateway. Refer: <a href="https://aka.ms/tmtauditlog#logging-cloud-gateway">https://aka.ms/tmtauditlog#logging-cloud-gateway</a>
+SDL Phase:	Design
+Interaction: Request
+122. An adversary can deny actions on Cloud Gateway due to lack of auditing  [State: Not Started]  [Priority: High] 
+Category:	Repudiation
+Description:	An adversary may perform actions such as spoofing attempts, unauthorized access etc. on Cloud gateway. It is important to monitor these attempts so that adversary cannot deny these actions
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Ensure that appropriate auditing and logging is enforced on Cloud Gateway. Refer: <a href="https://aka.ms/tmtauditlog#logging-cloud-gateway">https://aka.ms/tmtauditlog#logging-cloud-gateway</a>
+SDL Phase:	Design
