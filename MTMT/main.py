@@ -4,10 +4,11 @@ import argparse
 import sys
 
 class Threat:
-    def __init__(self, summary="", threat_number=0, priority="", category="", description="", sdl_phase="", mitigations=""):
+    def __init__(self, summary="", threat_number=0, priority="",state="", category="", description="", sdl_phase="", mitigations=""):
         self.summary = summary
         self.threat_number = threat_number
         self.priority = priority
+        self.state = state
         self.category = category
         self.description = description
         self.sdl_phase = sdl_phase
@@ -30,13 +31,15 @@ class Interaction:
         self.threats.append(threat)
 
 def set_threat_attribute(line, threat):
-    pattern = r'(\d+)\.\s+(.*?)\s+\[Priority:\s(.*?)\]'
+    pattern = r'(\d+)\.\s+(.*?)\s+\[State:\s(.*?)\]\s+\[Priority:\s(.*?)\]'
 
     match = re.match(pattern, line)
     if match:
         threat.threat_number = int(match.group(1))
         threat.summary = match.group(2)
-        threat.priority = match.group(3)
+        threat.state = match.group(3)
+        threat.priority = match.group(4)
+        print(threat.priority)
 
     attributes_mapping = {
         "Category:": "category",
@@ -61,7 +64,7 @@ def check_all_fields_set(threat):
 def serialize_to_csv(interactions, filename='output.csv'):
     # Define the CSV headers
     headers = [
-        'Interaction Name', 'Threat Number', 'Summary', 'Priority', 
+        'Interaction Name', 'Threat Number', 'Summary', 'Priority', 'State',
         'Category', 'Description', 'SDL Phase', 'Mitigations'
     ]
     
@@ -75,7 +78,7 @@ def serialize_to_csv(interactions, filename='output.csv'):
             for threat in interaction.threats:
                 writer.writerow([
                     interaction.name, threat.threat_number, threat.summary, 
-                    threat.priority, threat.category, threat.description, 
+                    threat.priority,threat.state, threat.category, threat.description, 
                     threat.sdl_phase, threat.mitigations
                 ])
 
