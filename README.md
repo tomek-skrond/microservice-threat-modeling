@@ -15,7 +15,7 @@ The analysis consists of the following:
     - Threat type relevancy for each component
     - Threat metrics exported by each Threat Modeling tools
 
-# Usage
+# Usage (parsing MTMT raw data)
 
 ### Raw data adjustment
 `raw_data` directory consists of raw data from MTMT tool that is to be adjusted for later analysis.
