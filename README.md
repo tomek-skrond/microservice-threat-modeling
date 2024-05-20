@@ -15,6 +15,12 @@ The analysis consists of the following:
     - Threat type relevancy for each component
     - Threat metrics exported by each Threat Modeling tools
 
+# Results
+Current results of analysis are stored in files:
+- [IriusRisk microservice threat model analysis](IriusRisk/microservice/results/irius-analysis-microservice.pdf)
+- [MTMT microservice threat model analysis](MTMT/microservice/results/mtmt-analysis-microservice.pdf)
+- monolithic results not ready yet
+
 # Usage (parsing MTMT raw data)
 
 ### Raw data adjustment
