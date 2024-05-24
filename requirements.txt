@@ -2,5 +2,6 @@ ipykernel
 pandas
 matplotlib
 seaborn
-xelatex
+#xelatex
 notebook
+plotly
