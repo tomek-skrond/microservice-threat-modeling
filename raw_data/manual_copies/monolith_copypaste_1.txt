@@ -1,5 +1,5 @@
 Threat Modeling Report
-Created on 5/24/2024 11:18:31 PM
+Created on 5/18/2024 1:53:56 PM
 Threat Model Name:
 
 Owner:
@@ -94,70 +94,70 @@ Justification:	<no mitigation provided>
 Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
 SDL Phase:	Implementation
 
-Interaction: Desktop Frontend to LB
-Desktop Frontend to LB interaction screenshot
-      
-10. An adversary may spoof the service or service endpoints by leveraging stale CNAME DNS records and executing a subdomain hijack attack  [State: Not Started]  [Priority: High] 
-Category:	Spoofing
-Description:	An adversary may spoof the service or service endpoints by leveraging stale CNAME DNS records and executing a subdomain hijack attack
-Justification:	<no mitigation provided>
-Possible Mitigation(s):	Address stale CNAME DNS records mapping custom domain names to the domain name of the Azure Traffic Manager instance. In some cases, deleting the stale CNAME records may be sufficient, while in other cases, the domain name of the Azure Traffic Manager instance should be kept to prevent subdomain hijack attacks. Refer: <a href="https://aka.ms/tmt-th178 ">https://aka.ms/tmt-th178 </a>
-SDL Phase:	Implementation
-
 Interaction: LB to Backend
 LB to Backend interaction screenshot
       
-11. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
+10. An adversary may gain unauthorized access to Web API due to poor access control checks  [State: Not Started]  [Priority: High] 
 Category:	Elevation of Privileges
 Description:	An adversary may gain unauthorized access to Web API due to poor access control checks
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Implement proper authorization mechanism in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtauthz#authz-aspnet">https://aka.ms/tmtauthz#authz-aspnet</a>
 SDL Phase:	Implementation
-12. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
+11. An adversary can gain access to sensitive information from an API through error messages  [State: Not Started]  [Priority: High] 
 Category:	Information Disclosure
 Description:	An adversary can gain access to sensitive data such as the following, through verbose error messages - Server names - Connection strings - Usernames - Passwords - SQL procedures - Details of dynamic SQL failures - Stack trace and lines of code - Variables stored in memory - Drive and folder locations - Application install points - Host configuration settings - Other internal application details
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Ensure that proper exception handling is done in ASP.NET Web API. Refer: <a href="https://aka.ms/tmtxmgmt#exception">https://aka.ms/tmtxmgmt#exception</a>
 SDL Phase:	Implementation
-13. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
+12. An adversary can gain access to sensitive data by sniffing traffic to Web API  [State: Not Started]  [Priority: High] 
 Category:	Information Disclosure
 Description:	An adversary can gain access to sensitive data by sniffing traffic to Web API
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Force all traffic to Web APIs over HTTPS connection. Refer: <a href="https://aka.ms/tmtcommsec#webapi-https">https://aka.ms/tmtcommsec#webapi-https</a>
 SDL Phase:	Implementation
-14. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
+13. An adversary can gain access to sensitive data stored in Web API's config files  [State: Not Started]  [Priority: Medium] 
 Category:	Information Disclosure
 Description:	An adversary can gain access to the config files. and if sensitive data is stored in it, it would be compromised.
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Encrypt sections of Web API's configuration files that contain sensitive data. Refer: <a href="https://aka.ms/tmtconfigmgmt#config-sensitive">https://aka.ms/tmtconfigmgmt#config-sensitive</a>
 SDL Phase:	Implementation
-15. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
+14. Attacker can deny a malicious act on an API leading to repudiation issues  [State: Not Started]  [Priority: High] 
 Category:	Repudiation
 Description:	Attacker can deny a malicious act on an API leading to repudiation issues
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Ensure that auditing and logging is enforced on Web API. Refer: <a href="https://aka.ms/tmtauditlog#logging-web-api">https://aka.ms/tmtauditlog#logging-web-api</a>
 SDL Phase:	Design
-16. An adversary may spoof Load Balancer and gain access to Web API  [State: Not Started]  [Priority: High] 
+15. An adversary may spoof Load Balancer and gain access to Web API  [State: Not Started]  [Priority: High] 
 Category:	Spoofing
 Description:	If proper authentication is not in place, an adversary can spoof a source process or external entity and gain unauthorized access to the Web Application
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Ensure that standard authentication techniques are used to secure Web APIs. Refer: <a href="https://aka.ms/tmtauthn#authn-secure-api">https://aka.ms/tmtauthn#authn-secure-api</a>
 SDL Phase:	Design
-17. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
+16. An adversary may inject malicious inputs into an API and affect downstream processes  [State: Not Started]  [Priority: High] 
 Category:	Tampering
 Description:	An adversary may inject malicious inputs into an API and affect downstream processes
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Ensure that model validation is done on Web API methods. Refer: <a href="https://aka.ms/tmtinputval#validation-api">https://aka.ms/tmtinputval#validation-api</a> Implement input validation on all string type parameters accepted by Web API methods. Refer: <a href="https://aka.ms/tmtinputval#string-api">https://aka.ms/tmtinputval#string-api</a>
 SDL Phase:	Implementation
-18. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
+17. An adversary can gain access to sensitive data by performing SQL injection through Web API  [State: Not Started]  [Priority: High] 
 Category:	Tampering
 Description:	SQL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. The primary form of SQL injection consists of direct insertion of code into user-input variables that are concatenated with SQL commands and executed. A less direct attack injects malicious code into strings that are destined for storage in a table or as metadata. When the stored strings are subsequently concatenated into a dynamic SQL command, the malicious code is executed.
 Justification:	<no mitigation provided>
 Possible Mitigation(s):	Ensure that type-safe parameters are used in Web API for data access. Refer: <a href="https://aka.ms/tmtinputval#typesafe-api">https://aka.ms/tmtinputval#typesafe-api</a>
 SDL Phase:	Implementation
 
-Interaction: Mobile Frontend to LB
-Mobile Frontend to LB interaction screenshot
+Interaction: Request
+Request interaction screenshot
+      
+18. An adversary may spoof the service or service endpoints by leveraging stale CNAME DNS records and executing a subdomain hijack attack  [State: Not Started]  [Priority: High] 
+Category:	Spoofing
+Description:	An adversary may spoof the service or service endpoints by leveraging stale CNAME DNS records and executing a subdomain hijack attack
+Justification:	<no mitigation provided>
+Possible Mitigation(s):	Address stale CNAME DNS records mapping custom domain names to the domain name of the Azure Traffic Manager instance. In some cases, deleting the stale CNAME records may be sufficient, while in other cases, the domain name of the Azure Traffic Manager instance should be kept to prevent subdomain hijack attacks. Refer: <a href="https://aka.ms/tmt-th178 ">https://aka.ms/tmt-th178 </a>
+SDL Phase:	Implementation
+
+Interaction: Request
+Request interaction screenshot
       
 19. An adversary may spoof the service or service endpoints by leveraging stale CNAME DNS records and executing a subdomain hijack attack  [State: Not Started]  [Priority: High] 
 Category:	Spoofing
